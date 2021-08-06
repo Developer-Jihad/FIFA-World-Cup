@@ -28,14 +28,10 @@ p{
 }
 .top-section, .highlight-section{
     height: 677px;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    padding: 0px 100px 0px 140px
-    
-}
-.half-width{
-    width: 50%;
+    padding: 0px 100px 0px 140px;
 }
 .half-width .section-title{
     font-size: 64px;
@@ -44,10 +40,14 @@ p{
     padding-bottom: 43px;
 }
 .half-width img{
-    width: 100%; 
+    width: 100%;
+}
+.top-image:hover{
+    transform: rotate(360deg);
+    transition: transform, 2s;
 }
 
-/*-------------------------------
+/* -----------------------------
      Players Profile Style
 ------------------------------ */
 .players-section{ 
@@ -75,12 +75,12 @@ p{
     font-size: 28px;
 }
 
-/* --------------------------------
+/* -------------------------------
     Heighlights Section Style
 -------------------------------- */
 
 .highlight-section{
-    margin-bottom: 150px;
+    margin-bottom: 0px;
 }
 .highlight-title{
     font-size: 48px;
@@ -90,7 +90,7 @@ p{
 
 
 /* ---------------------------
-      Timeline Style
+     Games Timeline Style
 ---------------------------- */
 
 
@@ -119,6 +119,7 @@ p{
 }
 .timeline-info h2{
     font-size: 45px;
+    font-weight: 600;
     margin: 0;
 }
 .timeline-info p{
@@ -170,11 +171,31 @@ small{
      Media Queris Styles 
 ----------------------------*/
 
+/* For Mobile Devices */
+
 @media only screen and (max-width: 688px) {
     .container{
         width: 100%;
     }
     .top-section{
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 2%;
+        height: 250px;
     }
+    .highlight-section{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 2%;
+    }
+    .half-width .section-title{
+        font-size: 20px;
+    }
+    .link-button{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    
+    .players{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
 }
